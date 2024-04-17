@@ -18,11 +18,12 @@
 `include "Expansion.v"
 `include "Compression.v"
 
-module SHA256(data, eoc, clk, rst, soc, rd);
+module SHA256(data, eoc, hash_out, clk, rst, soc, rd);
 
 	input  clk, rst, soc, rd;
 	inout  [31:0] data;
 	output eoc;
+	output [31:0] hash_out;
 
 	// Internal control signals:
 	wire rst_n, soc_n;
@@ -75,5 +76,6 @@ module SHA256(data, eoc, clk, rst, soc, rd);
 	end
 
 	assign odata = mux_out;
+	assign hash_out = mux_out;
 
 endmodule
