@@ -26,13 +26,12 @@ module Compression(hash, Wt, Kt, clk, rst, soc,eoc);
     Maj umaj(maj,A,B,C);
     Ch uch(ch,E,F,G);
 
-    add5 ut1(T1, h,se,ch,Kt,Wt);
+    add5 ut1(T1, H,se,ch,Kt,Wt);
     add2 ut2(T2,sa,maj);
 
     add2 uaddA(addA,T1,T2);
     add2 uaddE(addE,D,T1);
 
-    assign hash = {Ha, Hb, Hc, Hd, He, Hf, Hg, Hh}
-
+    assign hash = {Ha, Hb, Hc, Hd, He, Hf, Hg, Hh};
 
 endmodule

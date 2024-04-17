@@ -2,7 +2,7 @@ module Sigma1(out,in);
     input [31:0] in;
     output [31:0] out;
 
-    wire o1,o2,o3;
+    wire [31:0] o1,o2,o3;
 
     ROTR #(17) R7(o1,in);
     ROTR #(19) R18(o2,in);

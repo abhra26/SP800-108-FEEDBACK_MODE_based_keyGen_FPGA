@@ -54,7 +54,7 @@ module SHA256(data, eoc, clk, rst, soc, rd);
 
 	// Compression sub-module:
 	wire [255:0] hash;
-	Compression u3(hash, msg, k, clk, rst_n, soc, ieoc);
+	Compression u3(hash, msg, k, clk, rst, soc, ieoc);
 
 	// Output MUX:
 	wire [2:0]  abc;

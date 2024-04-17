@@ -1,11 +1,12 @@
 module CSigma1 (out,in);
     input [31:0] in;
     output [31:0] out;
-    wire [31:0] a,b,c;
-    ROTR #(6) ror6(a,in);
-    ROTR #(11) ror11(b,in);
-    ROTR #(25) ror25(c,in);
+    wire [31:0] net [2:0];
 
-    assign out = a^b^c;
+    ROTR #(6) ror6(net[0],in);
+    ROTR #(11) ror11(net[1],in);
+    ROTR #(25) ror25(net[2],in);
+
+    assign out = net[0]^net[1]^net[2];
 
 endmodule

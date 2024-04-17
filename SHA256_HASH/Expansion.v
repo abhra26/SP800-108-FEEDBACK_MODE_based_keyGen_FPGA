@@ -3,7 +3,7 @@ module Expansion(out,in,clk,sel);
     input clk,sel;
     output [31:0] out; 
 
-    reg [31:0]mem[0:15];
+    reg [31:0] mem [0:15];
 
     wire [31:0] mux_out,sig0,sig1;
     wire [31:0] a0,a1,a9,a14,sum;

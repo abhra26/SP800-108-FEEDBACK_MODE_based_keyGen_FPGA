@@ -1,5 +1,5 @@
-module Maj(out,a,b,c,clk);
-    input clk;
+module Maj(out,a,b,c);
+
     input [31:0] a,b,c;
     output [31:0] out;
 
