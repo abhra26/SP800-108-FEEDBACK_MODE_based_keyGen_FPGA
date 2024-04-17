@@ -1,3 +1,23 @@
+`include "ROTR.v"
+`include "SHR.v"
+`include "add2.v"
+`include "add3.v"
+`include "add4.v"
+`include "add5.v"
+`include "Ch.v"
+`include "Maj.v"
+
+`include "Sigma0.v"
+`include "Sigma1.v"
+`include "CSigma0.v"
+`include "CSigma1.v"
+`include "wvar.v"
+
+`include "Counter.v"
+`include "Constants.v"
+`include "Expansion.v"
+`include "Compression.v"
+
 module SHA256(data, eoc, clk, rst, soc, rd);
 
 	input  clk, rst, soc, rd;

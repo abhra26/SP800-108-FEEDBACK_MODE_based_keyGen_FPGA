@@ -1,6 +1,6 @@
 module Compression(hash, Wt, Kt, clk, rst, soc,eoc);
 
-    input clk,rst,soc;
+    input clk,rst,soc,eoc;
     input [31:0] Wt, Kt;
     output [255:0] hash;
 

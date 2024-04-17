@@ -1,6 +1,7 @@
-module wvar(H_out,X_out,in,in0,H0,clk,soc,rst_n);
-    input clk,rst,soc;
-    input [31:0] in,H0,in0;
+module wvar(H_out,X_out,in,H0,clk,rst,soc,eoc);
+
+    input clk,rst,soc,eoc;
+    input [31:0] in,H0;
     output [31:0] H_out, X_out;
 
     reg [31:0] A,A0;
@@ -14,8 +15,8 @@ module wvar(H_out,X_out,in,in0,H0,clk,soc,rst_n);
 
     add2 u0(add_out,A,A0);
 
-    assign dA0 = (~rst_n) ? H0 : (soc) ? add_out : A0;
-	assign dA  = (~rst_n) ? 32'd 0 : (soc) ? add_out : (eoc) ? A : in;
+    assign dA0 = (rst) ? H0 : (soc) ? add_out : A0;
+	assign dA  = (rst) ? 32'd 0 : (soc) ? add_out : (eoc) ? A : in;
 
     assign X_out = A;
     assign H_out = add_out;
