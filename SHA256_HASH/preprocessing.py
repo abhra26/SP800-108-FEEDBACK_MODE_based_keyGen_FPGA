@@ -11,8 +11,9 @@ def text_to_binary(text):
     else:
       print(out[i-1],end=" ")
 
-  return None
+  return out
 
 # Example usage
 text = "card?=4536000123456789Pin?=1234DeviceId?=co2w61ythtd7Name?=rahulroycvv?=555Expiry?=10-10-30"
-text_to_binary(text)
+out = text_to_binary(text)
+print("Message Blocks = ", len(out)/512)
