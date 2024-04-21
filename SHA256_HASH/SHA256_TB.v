@@ -23,10 +23,10 @@ module SHA256_testbench();
 	assign wrd = rrd;
 
 	initial begin
-		//$display("TestBench Running...");
-		//$dumpfile("Hash.vcd");
-        //$dumpvars(0, SHA256_testbench);
-
+		
+		$display("TestBench Running...");
+		$dumpfile("Hash.vcd");
+        $dumpvars(0, SHA256_testbench);
 
 		file = $fopen("tb_data.txt", "r");
 		
